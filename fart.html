@@ -1,26 +1,14 @@
-
-<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 <html>
-<head>
-<style>
-button {color: white; font-family:'Source Code Pro'; font-size:100%; background-color: #3753fa; transition-duration: 0.4s; border: 2px solid #192673; padding: 14px 40px; border-radius: 4px; text-align: center; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);} 
-button:hover {background-color: #203091;}
-body {font-family:'Maven Pro'; text-align: center;}
-</style>
-</head>
-<body>
-<button onclick="openGame()">Open Game</button>
-<script>
-function openGame() {
-var win = window.open()
-var url = "https://example.com" // This is the link to the game you want to appear in the new tab.
-var iframe = win.document.createElement('iframe')
-iframe.style.width = "100%";
-iframe.style.height = "100%";
-iframe.style.border = "none";
-iframe.src = url
-win.document.body.appendChild(iframe)
-}
-</script>
-</body>
+window.onload = setInterval(GameLoop, 1000 / 10); //10fps
+
+let myAudio = new Audio();
+
+myAudio.src = '/Music/PlayMusic.mp3';
+
+function Gameloop() {
+    myAudio.play();
+    if (myAudio.paused == true) {
+        myAudio.play();
+    }
+}  
 </html>
